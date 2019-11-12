@@ -40,7 +40,7 @@ public class AuthorizeController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("callback")
+    @GetMapping("/callback")
     public String callback(@RequestParam("code")String code,
                            @RequestParam("state")String state,
                            HttpServletResponse response){
@@ -71,7 +71,7 @@ public class AuthorizeController {
     }
 
     @GetMapping("/logout")
-    public String Logout(HttpServletRequest request,
+    public String logout(HttpServletRequest request,
                          HttpServletResponse response){
         request.getSession().removeAttribute("user");
         Cookie cookie = new Cookie("token",null);
