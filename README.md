@@ -8,7 +8,8 @@
 ##工具
 [GIT](https://git-scm.com/)<br>
 [FlywayMigration官方文档](https://flywaydb.org/getstarted/firststeps/maven#creating-the-first-migration)<br>
-[lombok](https://projectlombok.org/setup/maven)
+[lombok](https://projectlombok.org/setup/maven)<br>
+[jquery ajax.post方法](https://api.jquery.com/jQuery.post/)
 ##脚本
 ```sql
 create table user
