@@ -9,6 +9,16 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.min.js" type="application/javascript"></script>
 </head>
+<script>
+    window.onload =function () {
+        debugger;
+        var closable = window.localStorage.getItem("closable");
+        if(closable == "true"){
+            window.close();
+            window.localStorage.removeItem("closable");//表示关闭后就会移除这个变量
+        }
+    }
+</script>
 <body>
 <div th:insert="~{navigation :: nva}"></div>
 <div class="container-fluid main">
