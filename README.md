@@ -27,4 +27,5 @@ create table user
 使用数据库的FlywayMigratio执行脚本
 ```shell script
 mvn flyway:migrate
+mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 ```
