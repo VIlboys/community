@@ -10,23 +10,7 @@ body{
     margin-bottom:15px;
 }
 
-.comments{
-    margin-bottom: 15px;
-    border-bottom: 1px solid #eee;
-    padding: 5px;
-}
 
-.sub-comments{
-    border-radius: 5px;
-    margin-top: 15px;
-    border: 1px solid #eee;
-    padding-top: 15px;
-    margin-bottom: 15px;
-}
-
-.sub-comments .btn{
-    margin: 10px 0;
-}
 
 .media-object{
     width: 38px;
@@ -74,12 +58,14 @@ body{
     padding-top: 10px;
 }
 
+
 .publish-tag-tab .label-info{
-    margin-right: 10px;
+    white-space: normal;
+    margin:6px 6px;
+    display: inline-block;
 }
 
 .community-menu{
-    display: block;
     color: #999;
     font-size: 13px;
     margin-bottom: 20px;
@@ -96,6 +82,24 @@ body{
 .btn-comment{
     float: right;
     margin-bottom: 10px;
+}
+
+.comments{
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding: 5px;
+}
+
+.sub-comments{
+    border-radius: 5px;
+    margin-top: 15px;
+    border: 1px solid #eee;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+.sub-comments .btn{
+    margin: 10px 0;
 }
 
 .comment-sp{

@@ -37,7 +37,7 @@ function comment2target(targetId,type,content) {
                     alert(response.message)
                 }
             }
-            console.log(response);
+
         },
         dataType: "json"
     });
@@ -50,7 +50,7 @@ function comment(e) {
 }
 
 //二级评论
-function collapseComents(e) {
+function collapseComments(e) {
     var id = e.getAttribute("data-id");
     var comments = $("#comment-"+id);
 
@@ -73,7 +73,7 @@ function collapseComents(e) {
             e.classList.add("active");
         }else {
             $.getJSON( "/comment/"+id, function( data ) {
-                console.log(data);
+
                 $.each(data.data.reverse(), function(index,comment) {
 
                     var mediaLeftElement = $("<div/>",{
@@ -94,12 +94,11 @@ function collapseComents(e) {
                         "class": "menu",
                     }).append($("<div/>", {
                         "class": "pull-right",
-                        "html": moment(comment.getCreate).format('YYYY-MM-DD')
+                        "html": moment(comment.gmtCreate).format('YYYY-MM-DD')
                     })));
                     var mediaElement = $("<div/>",{
                         "class":"media"
-                    }).append(mediaLeftElement)
-                        .append(mediaBodyElement);
+                    }).append(mediaLeftElement).append(mediaBodyElement);
                     var commentElement =$("<div/>",{
                         "class": "col-lg-12 col-md-12 col-sm-12 col-xs-12 comments"
                     }).append(mediaElement);
