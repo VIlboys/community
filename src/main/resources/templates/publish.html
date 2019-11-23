@@ -11,6 +11,7 @@
     <script src="/js/community.js"></script>
     <script src="/js/bootstrap.min.js" type="application/javascript"></script>
     <script src="/js/editormd.min.js" type="application/javascript"></script>
+
 </head>
 <body>
 <div th:insert="~{navigation :: nva}"></div>
@@ -43,7 +44,12 @@
                             path: "/js/lib/",
                             delay: 0,
                             watch: false,
-                            placeholder: "请输入问题描述"
+                            placeholder: "请输入问题描述",
+
+                            imageUpload    : true,
+                            imageFormats   : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                            imageUploadURL : "/file/upload",
+
                         });
                     });
                 </script>
