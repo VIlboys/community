@@ -24,7 +24,21 @@ public class UCloudProvider {
 
     @Value("${ucloud.ufile.private-key}")
     private String privateKey;
+
+    @Value("${ucloud.ufile.bucket-name}")
     private String bucketName;
+
+    @Value("${ucloud.ufile.region}")
+    private String region;
+
+    @Value("${ucloud.ufile.suffix}")
+    private String suffix;
+
+    @Value("${ucloud.ufile.expires}")
+    private Integer expires;
+
+
+
 
 
     //处理同步上传
@@ -40,8 +54,7 @@ public class UCloudProvider {
         try {
             ObjectAuthorization objectAuthorization = new UfileObjectLocalAuthorization(
                     publicKey, privateKey);
-            ObjectConfig config = new ObjectConfig("cn-bj", "ufileos.com");
-            bucketName = "baiyao";
+            ObjectConfig config = new ObjectConfig(region, suffix);
             PutObjectResultBean response = UfileClient.object(objectAuthorization, config)
                     .putObject(fileStream, mimeType)
                     .nameAs(generatedFileName)
@@ -52,7 +65,7 @@ public class UCloudProvider {
 
                     if(response != null && response.getRetCode() == 0){
                         String url = UfileClient.object(objectAuthorization, config)
-                                .getDownloadUrlFromPrivateBucket(generatedFileName, bucketName, 24*60*60)
+                                .getDownloadUrlFromPrivateBucket(generatedFileName, bucketName,expires)
                                 .createUrl();
                         return url;
                     }
